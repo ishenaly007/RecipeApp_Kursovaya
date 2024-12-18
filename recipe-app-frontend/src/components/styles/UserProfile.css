@@ -92,6 +92,7 @@ p.no-recipes {
 
 /* Стили для кнопки удаления */
 .delete-recipe-button {
+    margin-top: 6px;
     background-color: #dc3545; /* Красный */
     color: white;
     border: none;

@@ -10,6 +10,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import UserProfile from './components/UserProfile';
 import SearchResultsList from "./components/SearchResultsList";
+import EditRecipe from "./components/EditRecipe";
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
                         <Route path="/" element={<ProtectedRoute><RecipeList/></ProtectedRoute>}/>
                         <Route path="/profile" element={<ProtectedRoute><UserProfile/></ProtectedRoute>}/>
                         <Route path="/create" element={<ProtectedRoute><RecipeForm/></ProtectedRoute>}/>
+                        <Route path="/recipes/edit" element={<ProtectedRoute><EditRecipe/></ProtectedRoute>}/>
                         <Route path="/recipes/:id" element={<ProtectedRoute><RecipeDetails/></ProtectedRoute>}/>
                         <Route path="/search-results" element={<SearchResultsList/>}/>
                         <Route path="/register" element={<Register/>}/>

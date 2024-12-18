@@ -5,7 +5,7 @@ import { getRecipeById, getIngredientsByRecipe, getStepsByRecipe, updateRecipe }
 const EditRecipe = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { id } = location.state || {}; // Получаем ID из состояния
+    const { id } = location.state || {};
     const [recipe, setRecipe] = useState(null);
     const [ingredients, setIngredients] = useState([]);
     const [steps, setSteps] = useState([]);
