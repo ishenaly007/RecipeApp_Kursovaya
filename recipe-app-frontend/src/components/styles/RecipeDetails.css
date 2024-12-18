@@ -1,0 +1,186 @@
+/* RecipeDetails.css */
+
+/* Основной контейнер для страницы рецепта */
+.recipe-details {
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Заголовок рецепта */
+.recipe-details h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Автор и описание рецепта */
+.recipe-details p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.recipe-details strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Фотографии рецепта */
+.recipe-photos {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.recipe-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.like-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #ddd; /* Начальный цвет (если не лайкнул) */
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.like-button.liked {
+    color: #e74c3c; /* Красный для лайкнутой кнопки */
+}
+
+.like-button:hover {
+    transform: scale(1.1);
+}
+
+/* Вспомогательные стили для состояния лайка */
+.recipe-likes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.recipe-likes p {
+    font-size: 18px;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Стили для ингредиентов и шагов */
+h3 {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #333;
+}
+
+ul, ol {
+    padding-left: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Форма для добавления комментариев */
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для комментариев */
+ul {
+    margin-top: 20px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li strong {
+    color: #333;
+}
+
+/* Стили для модального окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Закрытие модального окна */
+.modal:hover {
+    cursor: pointer;
+}

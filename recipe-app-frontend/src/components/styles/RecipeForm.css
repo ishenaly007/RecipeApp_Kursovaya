@@ -1,0 +1,108 @@
+/* RecipeForm.css */
+.recipe-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.recipe-form h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.recipe-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.recipe-form input[type="text"],
+.recipe-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.recipe-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.recipe-form input[type="file"] {
+    margin-bottom: 15px;
+}
+
+.recipe-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.recipe-form button:hover {
+    background-color: #0056b3;
+}
+
+.recipe-form .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.recipe-form div {
+    margin-bottom: 15px;
+}
+
+.recipe-form .ingredient-container,
+.recipe-form .step-container {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.recipe-form .ingredient-container label,
+.recipe-form .step-container label {
+    margin: 5px 0;
+    display: block;
+}
+
+.recipe-form .ingredient-container button,
+.recipe-form .step-container button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.recipe-form .ingredient-container button:hover,
+.recipe-form .step-container button:hover {
+    background-color: #c82333;
+}
+
+.recipe-form img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
