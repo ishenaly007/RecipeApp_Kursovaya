@@ -121,11 +121,11 @@ const RecipeForm = () => {
 
     return (
         <div className="recipe-form">
-            <h2>Create Recipe</h2>
+            <h2>Создать рецепт</h2>
             {error && <p className="error-message">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="title">Title</label>
+                    <label htmlFor="title">Название</label>
                     <input
                         id="title"
                         type="text"
@@ -135,7 +135,7 @@ const RecipeForm = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="description">Description</label>
+                    <label htmlFor="description">Описание</label>
                     <textarea
                         id="description"
                         value={description}
@@ -147,50 +147,50 @@ const RecipeForm = () => {
                 {/* Ingredients */}
                 {ingredients.map((ingredient, index) => (
                     <div key={index}>
-                        <label>Ingredient {index + 1}</label>
+                        <label>Ингредиент {index + 1}</label>
                         <input
                             type="text"
                             name="name"
                             value={ingredient.name}
                             onChange={(e) => handleIngredientChange(index, e)}
                             required
-                            placeholder="Ingredient name"
+                            placeholder="Название ингредиента"
                         />
                         <input
                             type="text"
                             name="quantity"
                             value={ingredient.quantity}
                             onChange={(e) => handleIngredientChange(index, e)}
-                            placeholder="Quantity"
+                            placeholder="Количество"
                         />
                         {ingredients.length > 1 && (
-                            <button type="button" onClick={() => handleDeleteIngredient(index)}>Delete</button>
+                            <button type="button" onClick={() => handleDeleteIngredient(index)}>Удалить</button>
                         )}
                     </div>
                 ))}
-                <button type="button" onClick={handleAddIngredient}>Add Ingredient</button>
+                <button type="button" onClick={handleAddIngredient}>Добавить ингредиент</button>
 
                 {/* Steps */}
                 {steps.map((step, index) => (
                     <div key={index}>
-                        <label>Step {index + 1}</label>
+                        <label>Шаг {index + 1}</label>
                         <textarea
                             name="description"
                             value={step.description}
                             onChange={(e) => handleStepChange(index, e)}
                             required
-                            placeholder="Step description"
+                            placeholder="Описание шага"
                         />
                         {steps.length > 1 && (
-                            <button type="button" onClick={() => handleDeleteStep(index)}>Delete</button>
+                            <button type="button" onClick={() => handleDeleteStep(index)}>Удалить</button>
                         )}
                     </div>
                 ))}
-                <button type="button" onClick={handleAddStep}>Add Step</button>
+                <button type="button" onClick={handleAddStep}>Добавить шаг</button>
 
                 {/* File Upload */}
                 <div>
-                    <label htmlFor="photos">Upload Photos</label>
+                    <label htmlFor="photos">Загрузить фотографии</label>
                     <input
                         id="photos"
                         type="file"
@@ -205,7 +205,7 @@ const RecipeForm = () => {
             </form>
 
             <div>
-                <h3>Uploaded Photos</h3>
+                <h3>Загруженные фотографии</h3>
                 {photos.length > 0 && photos.map((photo, index) => (
                     <img
                         key={index}

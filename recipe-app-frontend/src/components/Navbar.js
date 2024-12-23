@@ -45,15 +45,15 @@ const Navbar = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
                 <button type="submit" className="search-button">
-                    Search
+                    Поиск
                 </button>
             </form>
             <div className="navbar-actions">
                 <button onClick={handleProfile} className="profile-button">
-                    Profile
+                    Профиль
                 </button>
                 <button onClick={handleLogout} className="logout-button">
-                    Logout
+                    Выйти из аккаунта
                 </button>
             </div>
         </nav>

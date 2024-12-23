@@ -47,7 +47,7 @@ const UserProfile = () => {
 
     const handleDelete = async (recipeId) => {
         try {
-            const confirmDelete = window.confirm('Are you sure you want to delete this recipe?');
+            const confirmDelete = window.confirm('Вы уверены что хотите удалить этот рецепт?');
             if (!confirmDelete) return;
 
             await deleteRecipeById(recipeId);
@@ -65,10 +65,10 @@ const UserProfile = () => {
         <div className="user-profile">
             {user && (
                 <>
-                    <h2>{user.name}'s Profile</h2>
+                    <h2>Профиль {user.name}</h2>
                     <p><strong>Email:</strong> {user.email}</p>
 
-                    <h3>Your Recipes</h3>
+                    <h3>Ваши рецепты</h3>
                     {recipes.length > 0 ? (
                         <ul>
                             {recipes.map((recipe) => (
@@ -80,8 +80,8 @@ const UserProfile = () => {
                                     >
                                         <h4>{recipe.title}</h4>
                                     </Link>
-                                    <p><strong>Description:</strong> {recipe.description || 'No description available'}</p>
-                                    <p><strong>Likes:</strong> {likesCount[recipe.id] || 0}</p>
+                                    <p><strong>Описание:</strong> {recipe.description || 'No description available'}</p>
+                                    <p><strong>Лайки:</strong> {likesCount[recipe.id] || 0}</p>
                                     <div className="recipe-photos">
                                         {photos[recipe.id] && photos[recipe.id].length > 0 ? (
                                             photos[recipe.id].map((photo) => (
@@ -93,7 +93,7 @@ const UserProfile = () => {
                                                 />
                                             ))
                                         ) : (
-                                            <p>No photos available</p>
+                                            <p>Нет доступных фотографии</p>
                                         )}
                                     </div>
                                     {user.id === recipe.user_id && (
@@ -103,13 +103,13 @@ const UserProfile = () => {
                                                 state={{ id: recipe.id }}
                                                 className="edit-recipe-link"
                                             >
-                                                <button>Edit Recipe</button>
+                                                <button>Редактировать</button>
                                             </Link>
                                             <button
                                                 onClick={() => handleDelete(recipe.id)}
                                                 className="delete-recipe-button"
                                             >
-                                                Delete Recipe
+                                                Удалить
                                             </button>
                                         </div>
                                     )}
@@ -117,7 +117,7 @@ const UserProfile = () => {
                             ))}
                         </ul>
                     ) : (
-                        <p>You haven't uploaded any recipes yet.</p>
+                        <p>У вас нет загруженных рецептов.</p>
                     )}
                 </>
             )}

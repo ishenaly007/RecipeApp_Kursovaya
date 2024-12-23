@@ -18,8 +18,8 @@ const App = () => {
             <Navbar/>
             <div className="app-container">
                 <nav className="app-nav">
-                    <a href="/" className="nav-link">Home</a> |
-                    <a href="/create" className="nav-link">Create Recipe</a>
+                    <a href="/" className="nav-link">Главная</a> |
+                    <a href="/create" className="nav-link">Создать рецепт</a>
                 </nav>
                 <div className="app-content">
                     <Routes>

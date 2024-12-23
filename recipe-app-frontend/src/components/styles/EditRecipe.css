@@ -1,0 +1,96 @@
+/* EditRecipe.css */
+
+.edit-recipe {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-recipe h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.edit-recipe form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.edit-recipe label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.edit-recipe input[type="text"],
+.edit-recipe textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.edit-recipe input[type="text"]:focus,
+.edit-recipe textarea:focus {
+    border-color: #007bff;
+}
+
+.edit-recipe textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.edit-recipe button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.edit-recipe button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.edit-recipe h3 {
+    margin-top: 20px;
+    color: #444;
+}
+
+.edit-recipe div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-recipe div > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.edit-recipe div > div input[type="text"] {
+    flex: 1;
+    min-width: 150px;
+}
+
+.edit-recipe p {
+    text-align: center;
+    color: #ff0000;
+}

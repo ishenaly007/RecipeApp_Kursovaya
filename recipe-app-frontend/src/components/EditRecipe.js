@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { getRecipeById, getIngredientsByRecipe, getStepsByRecipe, updateRecipe } from '../api/api';
+import React, {useEffect, useState} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
+import {getRecipeById, getIngredientsByRecipe, getStepsByRecipe, updateRecipe} from '../api/api';
+import './styles/EditRecipe.css'
 
 const EditRecipe = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { id } = location.state || {};
+    const {id} = location.state || {};
     const [recipe, setRecipe] = useState(null);
     const [ingredients, setIngredients] = useState([]);
     const [steps, setSteps] = useState([]);
-    const [updatedRecipe, setUpdatedRecipe] = useState({ title: '', description: '' });
+    const [updatedRecipe, setUpdatedRecipe] = useState({title: '', description: ''});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
@@ -24,7 +25,7 @@ const EditRecipe = () => {
                 setIngredients(ingredientsData);
                 setSteps(stepsData);
 
-                setUpdatedRecipe({ title: recipeData.title, description: recipeData.description });
+                setUpdatedRecipe({title: recipeData.title, description: recipeData.description});
             } catch (err) {
                 console.error('Error fetching recipe data:', err);
                 setError('Error fetching recipe data');
@@ -40,7 +41,7 @@ const EditRecipe = () => {
         e.preventDefault();
         try {
             await updateRecipe(id, {
-                ...updatedRecipe,
+                ...recipe,
                 ingredients,
                 steps,
             });
@@ -56,29 +57,29 @@ const EditRecipe = () => {
 
     return (
         <div className="edit-recipe">
-            <h2>Edit Recipe</h2>
+            <h2>Редактировать рецепт</h2>
             {recipe && (
                 <form onSubmit={handleUpdate}>
                     <div>
-                        <label>Name</label>
+                        <label>Название</label>
                         <input
                             type="text"
                             value={updatedRecipe.title}
-                            onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, title: e.target.value })}
+                            onChange={(e) => setUpdatedRecipe({...updatedRecipe, title: e.target.value})}
                         />
                     </div>
                     <div>
-                        <label>Description</label>
+                        <label>Описание</label>
                         <textarea
                             value={updatedRecipe.description}
-                            onChange={(e) => setUpdatedRecipe({ ...updatedRecipe, description: e.target.value })}
+                            onChange={(e) => setUpdatedRecipe({...updatedRecipe, description: e.target.value})}
                         />
                     </div>
                     <div>
-                        <h3>Ingredients</h3>
+                        <h3>Ингредиенты</h3>
                         {ingredients.map((ingredient, index) => (
                             <div key={ingredient.id}>
-                                <label>Ingredient {index + 1}</label>
+                                <label>Ингредиент {index + 1}</label>
                                 <input
                                     type="text"
                                     value={ingredient.name}
@@ -101,10 +102,10 @@ const EditRecipe = () => {
                         ))}
                     </div>
                     <div>
-                        <h3>Steps</h3>
+                        <h3>Шаги готовки</h3>
                         {steps.map((step, index) => (
                             <div key={step.id}>
-                                <label>Step {index + 1}</label>
+                                <label>Шаг {index + 1}</label>
                                 <textarea
                                     value={step.description}
                                     onChange={(e) => {
@@ -119,7 +120,7 @@ const EditRecipe = () => {
                             </div>
                         ))}
                     </div>
-                    <button type="submit">Update Recipe</button>
+                    <button type="submit">Обновить рецепт</button>
                 </form>
             )}
         </div>

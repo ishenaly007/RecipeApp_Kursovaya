@@ -24,7 +24,7 @@ const Login = () => {
     return (
         <div className="login-container">
             <div className="login-form">
-                <h2>Login</h2>
+                <h2>Вход</h2>
                 {error && <p className="error-message">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <input
@@ -41,9 +41,9 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <button type="submit">Login</button>
+                    <button type="submit">Войти</button>
                 </form>
-                <a href="/register" className="register-link">Don't have an account? Register</a>
+                <a href="/register" className="register-link">Нет аккаунта? Зарегистрируйтесь</a>
             </div>
         </div>
     );

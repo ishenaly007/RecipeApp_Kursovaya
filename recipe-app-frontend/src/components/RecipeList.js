@@ -55,18 +55,18 @@ const RecipeList = () => {
 
     return (
         <div className="recipe-list">
-            <h2>All Recipes</h2>
+            <h2>Рецепты</h2>
             <ul>
                 {recipes.map(recipe => (
                     <li key={recipe.id} className="recipe-item">
                         <Link to={`/recipes/${recipe.id}`} className="recipe-link">
                             <h3>{recipe.title}</h3>
                         </Link>
-                        <p><strong>Author:</strong> {recipe.author || 'Unknown'}</p>
-                        <p><strong>Description:</strong> {recipe.description || 'No description available'}</p>
+                        <p><strong>Автор:</strong> {recipe.author || 'Неизвестен'}</p>
+                        <p><strong>Описание:</strong> {recipe.description || 'Нет описании'}</p>
 
                         {/* Отображаем количество лайков */}
-                        <p><strong>Likes:</strong> {likesCount[recipe.id] || 0}</p>
+                        <p><strong>Лайки:</strong> {likesCount[recipe.id] || 0}</p>
 
                         {/* Отображение фотографий */}
                         <div className="recipe-photos">
@@ -80,7 +80,7 @@ const RecipeList = () => {
                                     />
                                 ))
                             ) : (
-                                <p>No photos available</p>
+                                <p>Нет доступных фотографии</p>
                             )}
                         </div>
                     </li>

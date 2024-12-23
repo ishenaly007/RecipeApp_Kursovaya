@@ -118,8 +118,8 @@ const RecipeDetails = () => {
     return (
         <div className="recipe-details">
             <h2>{recipe.title}</h2>
-            <p><strong>Author:</strong> {recipe.author}</p>
-            <p><strong>Description:</strong> {recipe.description}</p>
+            <p><strong>Автор:</strong> {recipe.author}</p>
+            <p><strong>Описание:</strong> {recipe.description}</p>
 
             {/* Photos */}
             {photos.length > 0 && (
@@ -141,10 +141,10 @@ const RecipeDetails = () => {
                 <button className={`like-button ${isLiked ? 'liked' : ''}`} onClick={handleLikeToggle}>
                     <span role="img" aria-label="heart">❤️</span>
                 </button>
-                <p>{likesCount} likes</p>
+                <p>{likesCount} лайков</p>
             </div>
 
-            <h3>Ingredients</h3>
+            <h3>Ингредиенты</h3>
             {ingredients.length > 0 ? (
                 <ul>
                     {ingredients.map((ingredient) => (
@@ -154,10 +154,10 @@ const RecipeDetails = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No ingredients added yet.</p>
+                <p>Нет добавленных ингредиентов.</p>
             )}
 
-            <h3>Steps</h3>
+            <h3>Шаги готовки</h3>
             {steps.length > 0 ? (
                 <ol>
                     {steps.map((step) => (
@@ -165,18 +165,18 @@ const RecipeDetails = () => {
                     ))}
                 </ol>
             ) : (
-                <p>No steps added yet.</p>
+                <p>Нет добавленных шагов.</p>
             )}
 
-            <h3>Comments</h3>
+            <h3>Комментарии</h3>
             <form onSubmit={handleCommentSubmit}>
                 <textarea
                     value={newComment}
                     onChange={(e) => setNewComment(e.target.value)}
-                    placeholder="Add a comment"
+                    placeholder="Добавить комментарий"
                     required
                 />
-                <button type="submit">Submit Comment</button>
+                <button type="submit">Добавить</button>
             </form>
             {comments.length > 0 ? (
                 <ul>
@@ -187,7 +187,7 @@ const RecipeDetails = () => {
                     ))}
                 </ul>
             ) : (
-                <p>No comments yet.</p>
+                <p>Нет доступных комментариев.</p>
             )}
 
             {isModalOpen && (

@@ -1,40 +1,45 @@
-/* RecipeList.css */
-
 /* Основной контейнер списка рецептов */
 .recipe-list {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    margin: 20px auto;
+    max-width: 600px; /* Устанавливаем ширину списка */
+    margin: 20px 0; /* Устанавливаем выравнивание по левому краю */
 }
 
-/* Заголовок списка */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root, .app-container {
+    display: block;
+    align-items: flex-start;
+}
+
 h2 {
-    font-size: 28px;
+    font-size: 24px;
     color: #333;
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 15px;
 }
 
-/* Стили для каждого рецепта */
 .recipe-item {
     background-color: #f8f9fa;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    list-style-type: none;
 }
 
 .recipe-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
-/* Заголовок рецепта */
 .recipe-item h3 {
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
     margin: 0;
     text-decoration: none;
@@ -49,10 +54,9 @@ h2 {
     text-decoration: underline;
 }
 
-/* Стили для текста */
 p {
     color: #555;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 5px;
 }
 
@@ -60,30 +64,32 @@ strong {
     font-weight: bold;
 }
 
-/* Стили для блока с фотографиями рецепта */
 .recipe-photos {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 8px;
+    margin-top: 10px;
 }
 
 .recipe-photo {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 80px;
+    max-height: 80px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
-/* Стиль для сообщения об отсутствии фотографий */
 .recipe-photos p {
     color: #888;
     font-style: italic;
-    font-size: 14px;
+    font-size: 12px;
 }
 
-/* Стиль для сообщения об отсутствии рецептов */
 .recipe-list p {
-    text-align: center;
     color: #888;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.recipe-list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
